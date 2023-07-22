@@ -7,11 +7,11 @@ const {
   removeContact,
   updateContact,
   updateStatusContact,
-} = require('../../controllers/contacts');
+} = require('../../controllers');
 
 const {validateBody, isValidId} = require('../../middlewares');
 
-const {schemas} = require('../../models/contact');
+const {schemas} = require('../../models');
 
 const router = express.Router();
 
