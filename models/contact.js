@@ -2,7 +2,7 @@ const {Schema, model} = require('mongoose');
 
 const Joi = require('joi');
 
-const {handleMongooseError} = require('../helpers')
+const {handleMongooseError} = require('../helpers');
 
 const contactSchema = new Schema({
     name: {
@@ -30,18 +30,18 @@ const addSchema = Joi.object({
 
 const updateStatusSchema = Joi.object({
   favorite: Joi.boolean().required(),
-})
+});
 
-const schemas = {
+const contactSchemas = {
   addSchema,
   updateStatusSchema,
-}
+};
 
-contactSchema.post('save', handleMongooseError)
+contactSchema.post('save', handleMongooseError);
 
 const Contact = model('contact', contactSchema);
 
 module.exports = {
   Contact,
-  schemas,
+  contactSchemas,
 };
